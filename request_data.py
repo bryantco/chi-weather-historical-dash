@@ -65,6 +65,15 @@ daily_data["weather_code"] = daily_weather_code
 # Convert to polars df; one row per day, one column per weather metric
 chi_weather_daily_df = pl.DataFrame(daily_data)
 
+# Generate YMD features ----
+chi_weather_daily_df = chi_weather_daily_df.with_columns(
+    year=pl.col('date').dt.year(),
+    month=pl.col('date').dt.month(),
+    day=pl.col('date').dt.day()
+).with_columns(
+    month_day=pl.col('date').dt.strftime('%m-%d')
+)
+
 # Sync with Postgres -------------------------------------------------------------------------------
 # Check for database existence; create if doesn't exist ----
 load_dotenv()
@@ -113,7 +122,7 @@ print("Table 'chi_weather_daily' checked/created successfully.")
 # Write to the table
 chi_weather_daily_df_pd = chi_weather_daily_df.to_pandas()
 engine = create_engine(os.getenv('DATABASE_URL'))
-chi_weather_daily_df_pd.to_sql('chi_weather_daily', engine, if_exists='append', index=False)
+chi_weather_daily_df_pd.to_sql('chi_weather_daily', engine, if_exists='replace', index=False)
 
 cur.close()
 conn.close()
