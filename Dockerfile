@@ -5,8 +5,6 @@ EXPOSE 8088
 ######################################################################
 # Copy dashboards
 ######################################################################
-COPY dashboards /app/dashboards
-COPY charts /app/charts
 COPY entrypoint.sh /app/entrypoint.sh
 
 ENTRYPOINT ["/app/entrypoint.sh"]
