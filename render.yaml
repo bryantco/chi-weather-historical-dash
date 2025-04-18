@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: superset
+    env: docker
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PYTHONPATH
+        value: /app/pythonpath
+    healthCheckPath: /
+    autoDeploy: true
