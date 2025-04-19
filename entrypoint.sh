@@ -10,7 +10,7 @@ superset fab create-admin \
               --firstname Superset \
               --lastname Admin \
               --email admin@superset.com \
-              --password "$ADMIN_PASSWORD"
+              --password admin
 
 echo "📦 Importing databases..."
 superset import-dashboards -u admin --path /app || echo "No databases found."
