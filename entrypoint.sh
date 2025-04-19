@@ -13,16 +13,7 @@ superset fab create-admin \
               --password "$ADMIN_PASSWORD"
 
 echo "📦 Importing databases..."
-superset import-datasources --path /app/databases || echo "No databases found."
-
-echo "📦 Importing datasets..."
-superset import-datasources --path /app/datasets || echo "No datasets found."
-
-echo "📦 Importing charts..."
-superset import-charts --path /app/charts || echo "No charts found."
-
-echo "📦 Importing dashboards..."
-superset import-dashboards --username admin --path /app/dashboards || echo "No dashboards found."
+superset import-assets --path /app || echo "No databases found."
 
 # Start the app
 superset run -p 8088 -h 0.0.0.0
