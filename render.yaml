@@ -3,7 +3,7 @@ services:
     name: superset
     env: docker
     plan: free
-    branch: main
+    branch: main_analysis
     dockerfilePath: ./Dockerfile
     envVars:
       - key: PYTHONPATH
