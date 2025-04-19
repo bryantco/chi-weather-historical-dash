@@ -1,0 +1,240 @@
+dashboard_title: chi_weather_daily
+description: null
+css: ''
+slug: chi-weather-dashboard
+certified_by: ''
+certification_details: ''
+published: true
+uuid: f3d16345-a00e-45ae-ada7-74706e99d2cf
+position:
+  CHART-explore-123-1:
+    children: []
+    id: CHART-explore-123-1
+    meta:
+      chartId: 123
+      height: 50
+      sliceName: Chicago Snowfall by Month (in.)
+      uuid: 4f5f33b9-19ad-408b-ae88-6465279f139a
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-4Jg2NtSFPsSTMTjZNoZn7
+    type: CHART
+  CHART-explore-124-1:
+    children: []
+    id: CHART-explore-124-1
+    meta:
+      chartId: 124
+      height: 50
+      sliceName: Total Monthly Precipitation (in.)
+      uuid: 785cd0c9-1329-43ba-9329-81aa23d6e9f6
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-4Jg2NtSFPsSTMTjZNoZn7
+    type: CHART
+  CHART-riTeIT80ZZYonEQft6dNF:
+    children: []
+    id: CHART-riTeIT80ZZYonEQft6dNF
+    meta:
+      chartId: 122
+      height: 50
+      sliceName: Chicago Mean Temperature (F)
+      uuid: ca48e46e-7404-4d8e-a6de-bfe3ace0c554
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-k1Mk3GvWVLKKYriw7R2Lb
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-k1Mk3GvWVLKKYriw7R2Lb
+    - ROW-4Jg2NtSFPsSTMTjZNoZn7
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: chi_weather_daily
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-4Jg2NtSFPsSTMTjZNoZn7:
+    children:
+    - CHART-explore-123-1
+    - CHART-explore-124-1
+    id: ROW-4Jg2NtSFPsSTMTjZNoZn7
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-k1Mk3GvWVLKKYriw7R2Lb:
+    children:
+    - CHART-riTeIT80ZZYonEQft6dNF
+    id: ROW-k1Mk3GvWVLKKYriw7R2Lb
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  chart_configuration:
+    '122':
+      id: 122
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 123
+        - 124
+    '123':
+      id: 123
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 122
+        - 124
+    '124':
+      id: 124
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 122
+        - 123
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 122
+    - 123
+    - 124
+  timed_refresh_immune_slices: []
+  expanded_slices: {}
+  refresh_frequency: 0
+  color_scheme: ''
+  label_colors: {}
+  cross_filters_enabled: true
+  native_filter_configuration:
+  - id: NATIVE_FILTER-FJFnG5tuD_PG5Huqmmjrb
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: year
+    filterType: filter_select
+    targets:
+    - column:
+        name: year
+      datasetUuid: f4ad06c2-a5ef-4b03-b1d9-e9871e6cb81c
+    defaultDataMask:
+      extraFormData:
+        filters:
+        - col: year
+          op: IN
+          val:
+          - 2025
+          - 2024
+      filterState:
+        validateMessage: false
+        validateStatus: false
+        label: 2025, 2024
+        value:
+        - 2025
+        - 2024
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 122
+    - 123
+    - 124
+    tabsInScope: []
+  - id: NATIVE_FILTER-Hs9NOsXBXkpmaFqSDytfj
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: month
+    filterType: filter_select
+    targets:
+    - column:
+        name: month
+      datasetUuid: f4ad06c2-a5ef-4b03-b1d9-e9871e6cb81c
+    defaultDataMask:
+      extraFormData:
+        filters:
+        - col: month
+          op: IN
+          val:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 11
+          - 12
+      filterState:
+        validateMessage: false
+        validateStatus: false
+        label: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+        value:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+        - 12
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 122
+    - 123
+    - 124
+    tabsInScope: []
+  default_filters: '{}'
+  color_scheme_domain: []
+  shared_label_colors:
+  - '2024'
+  - '2025'
+  map_label_colors:
+    '2024': '#1f77b4'
+    '2025': '#aec7e8'
+version: 1.0.0
