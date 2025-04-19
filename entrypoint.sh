@@ -6,8 +6,11 @@ superset db upgrade
 superset init
 
 superset fab create-admin \
-    --username admin \
-    --password admin || true
+              --username admin \
+              --firstname Superset \
+              --lastname Admin \
+              --email admin@superset.com \
+              --password "$ADMIN_PASSWORD"
 
 echo "📦 Importing databases..."
 superset import-datasources --path /app/databases || echo "No databases found."
