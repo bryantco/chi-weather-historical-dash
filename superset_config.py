@@ -13,3 +13,5 @@ FEATURE_FLAGS = {
 GUEST_ROLE_NAME = "Public"
 GUEST_TOKEN_JWT_SECRET = os.environ.get("GUEST_TOKEN_JWT_SECRET", "fallback-secret")
 HTTP_HEADERS={"X-Frame-Options":"ALLOWALL"}
+
+SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI", "fallback-uri")
