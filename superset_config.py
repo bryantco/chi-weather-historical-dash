@@ -2,7 +2,7 @@ import os
 
 # AUTH_TYPE = "AUTH_DB"
 SECRET_KEY = os.environ.get("SUPERSET_SECRET_KEY", "fallback-key")
-PUBLIC_ROLE_LIKE_GAMMA = True
+PUBLIC_ROLE_LIKE = "Gamma"
 
 FEATURE_FLAGS = {
     "ALERT_REPORTS": True,
