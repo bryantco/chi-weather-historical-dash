@@ -4,10 +4,6 @@ EXPOSE 8088
 
 USER root
 COPY superset_config.py /app/pythonpath/superset_config.py
-COPY databases /app/databases
-COPY datasets /app/datasets
-COPY charts /app/charts
-COPY dashboards /app/dashboards
 COPY entrypoint.sh /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh
