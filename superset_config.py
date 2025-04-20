@@ -12,5 +12,5 @@ FEATURE_FLAGS = {
 
 # Dashboard embedding
 GUEST_ROLE_NAME = "Public"
-GUEST_TOKEN_JWT_SECRET = os.environ.get("GUEST_TOKEN_JWT_SECRET")
+GUEST_TOKEN_JWT_SECRET = os.environ.get("GUEST_TOKEN_JWT_SECRET", "fallback-secret")
 HTTP_HEADERS={"X-Frame-Options":"ALLOWALL"}
