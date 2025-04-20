@@ -75,7 +75,6 @@ chi_weather_daily_df = chi_weather_daily_df.with_columns(
 )
 
 # Sync with Postgres -------------------------------------------------------------------------------
-# Check for database existence; create if doesn't exist ----
 load_dotenv()
 
 DB_NAME = os.getenv("DB_NAME")
@@ -84,7 +83,6 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = os.getenv("DB_HOST")
 DB_PORT = os.getenv("DB_PORT")
 
-# Try connecting to the default postgres database
 conn = psycopg2.connect(
     dbname="postgres",
     user=DB_USER,
@@ -93,26 +91,7 @@ conn = psycopg2.connect(
     port=DB_PORT
 )
 
-conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT) 
 cur = conn.cursor()
-
-# Check if the database exists
-cur.execute("SELECT 1 FROM pg_database WHERE datname = %s", (DB_NAME,))
-exists = cur.fetchone()
-
-# Create the db if it doesn't exist
-if not exists:
-    cur.execute(f'CREATE DATABASE "{DB_NAME}"')
-    print(f"Database '{DB_NAME}' created.")
-else:
-    print(f"Database '{DB_NAME}' already exists.")
-
-# Check for table existence; create if doesn't exist ----
-create_table_query = """
-CREATE TABLE IF NOT EXISTS chi_weather_daily (
-    id SERIAL PRIMARY KEY
-)
-"""
 
 cur.execute(create_table_query)
 conn.commit()
