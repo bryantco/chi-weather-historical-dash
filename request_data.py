@@ -9,7 +9,7 @@ from sqlalchemy import create_engine
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-start_date = '2021-01-01'
+start_date = '2000-01-01'
 end_date = (date.today() - timedelta(days=1)).strftime('%Y-%m-%d')
 
 # Request data -------------------------------------------------------------------------------------
@@ -93,15 +93,12 @@ conn = psycopg2.connect(
 
 cur = conn.cursor()
 
-cur.execute(create_table_query)
-conn.commit()
-
-print("Table 'chi_weather_daily' checked/created successfully.")
-
 # Write to the table
 chi_weather_daily_df_pd = chi_weather_daily_df.to_pandas()
 engine = create_engine(os.getenv('DATABASE_URL'))
 chi_weather_daily_df_pd.to_sql('chi_weather_daily', engine, if_exists='replace', index=False)
+
+print("Successfully wrote to the chi_weather_daily table.")
 
 cur.close()
 conn.close()
