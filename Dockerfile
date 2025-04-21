@@ -2,13 +2,15 @@ FROM apache/superset:latest
 
 EXPOSE 8088
 
-######################################################################
-# Copy dashboards
-######################################################################
-COPY dashboards /app/dashboards
-COPY charts /app/charts
+USER root
+COPY superset_config.py /app/pythonpath/superset_config.py
 COPY entrypoint.sh /app/entrypoint.sh
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
 RUN chmod +x /app/entrypoint.sh
+USER superset
 
 ENTRYPOINT ["/app/entrypoint.sh"]
 EXPOSE 8088

@@ -1,0 +1,19 @@
+name: Daily Weather Data Request
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Runs at midnight CT (6 AM UTC)
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run data request
+        run: python3 request_data.py

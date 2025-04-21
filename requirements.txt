@@ -1,0 +1,6 @@
+psycopg2-binary>=2.9,<3
+openmeteo_requests==1.4
+retry-requests==2.0
+polars==1.27
+python-dotenv==1.1
+SQLAlchemy==2.0
