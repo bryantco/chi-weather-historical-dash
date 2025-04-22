@@ -2,7 +2,7 @@
 
 Link to dashboard: <https://chi-weather-historical-dash.onrender.com/superset/dashboard/p/wJBVlwklyo2/>
 
-This project plots three key weather metrics in Chicago that are of interest for historical comparison:
+This small data engineering project plots three key weather metrics in Chicago that are of interest for historical comparison:
 daily temperature, snowfall, and precipitation. It is inspired by many kitchen conversations/debates
 I've had as to whether this year has been colder, snowier, etc. than previous years. Since my memory
 hasn't always been accurate, I decided to create a small dashboard to rely on data instead. See below
