@@ -19,7 +19,7 @@ Currently, the pipeline consists of:
 1. A Python script that fetches daily weather data using the [Open-meteo](https://open-meteo.com/)
 API, which runs daily at midnight as a [Github action](https://github.com/features/actions);
 
-2. [https://supabase.com/](Supabase) as a warehouse to store the fetched data in a PostgreSQL
+2. [Supabase](https://supabase.com/) as a warehouse to store the fetched data in a PostgreSQL
 database;
 
 3. Apache [Superset](https://superset.apache.org/) to create and display the dashboard;
