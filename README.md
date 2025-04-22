@@ -12,6 +12,9 @@ for a screenshot:
  <img src="assets/dashboard.png" width="90%"/>
 </p>
 
+Weather readings are for O'Hare International Airport. Data is available starting January 1, 2000 and 
+updates daily with the latest temperature readings at midnight CT.
+
 ## Architecture
 
 Currently, the pipeline consists of:
