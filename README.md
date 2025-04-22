@@ -1,6 +1,7 @@
 # Chicago Weather Dashboard
 
-Link to dashboard: <https://chi-weather-historical-dash.onrender.com/superset/dashboard/p/wJBVlwklyo2/>
+Link to dashboard: <https://chi-weather-historical-dash.onrender.com/superset/dashboard/p/wJBVlwklyo2/> 
+(it may take a few minutes to load because Render fully spins down the website when inactive)
 
 This small data engineering project plots three key weather metrics in Chicago that are of interest for historical comparison:
 daily temperature, snowfall, and precipitation. It is inspired by many kitchen conversations/debates
