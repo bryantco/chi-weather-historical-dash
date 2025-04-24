@@ -2,6 +2,7 @@ import openmeteo_requests
 import requests_cache
 from retry_requests import retry
 import polars as pl
+import pandas
 from datetime import datetime, timedelta, date
 import os
 from dotenv import load_dotenv
