@@ -110,7 +110,12 @@ cur = conn.cursor()
 # Write to the table
 chi_weather_daily_df_pd = chi_weather_daily_df.to_pandas()
 engine = create_engine(os.getenv('DATABASE_URL'))
-chi_weather_daily_df_pd.to_sql('chi_weather_daily', engine, if_exists='replace', index=False)
+chi_weather_daily_df_pd.to_sql(
+    name='chi_weather_daily', 
+    con=engine, 
+    if_exists='replace', 
+    index=False
+)
 
 print("Successfully wrote to the chi_weather_daily table.")
 
