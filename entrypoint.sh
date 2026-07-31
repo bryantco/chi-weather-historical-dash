@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-# Setup Superset
 superset db upgrade
 superset init
 
@@ -12,5 +11,4 @@ superset fab create-admin \
               --email admin@superset.com \
               --password admin
 
-# Start the app
-superset run -p 8088 -h 0.0.0.0
+gunicorn -b 0.0.0.0:${PORT:-8088} --workers 4 --timeout 120 "superset.app:create_app()"
