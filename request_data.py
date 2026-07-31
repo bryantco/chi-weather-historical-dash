@@ -1,6 +1,4 @@
 import openmeteo_requests
-import requests_cache
-from retry_requests import retry
 import polars as pl
 import pandas
 from datetime import datetime, timedelta, date
@@ -14,9 +12,7 @@ end_date = (date.today() - timedelta(days=1)).strftime('%Y-%m-%d')
 
 # Request data -------------------------------------------------------------------------------------
 # Request from Open-Meteo API ----
-cache_session = requests_cache.CachedSession('.cache', expire_after = -1)
-retry_session = retry(cache_session, retries = 5, backoff_factor = 0.2)
-openmeteo = openmeteo_requests.Client(session = retry_session)
+openmeteo = openmeteo_requests.Client()
 
 url = "https://archive-api.open-meteo.com/v1/archive"
 daily_vars = [
