@@ -93,18 +93,13 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = os.getenv("DB_HOST")
 DB_PORT = os.getenv("DB_PORT")
 
-conn = psycopg2.connect(
-    dbname="postgres",
-    user=DB_USER,
-    password=DB_PASSWORD,
-    host=DB_HOST,
-    port=DB_PORT
-)
-
-cur = conn.cursor()
-
 # Write to the table
+engine = create_engine(f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/postgres")
+
 chi_weather_daily_df_pd = chi_weather_daily_df.to_pandas()
+chi_weather_daily_df_pd.to_sql(name='chi_weather_daily', con=engine, if_exists='replace', index=False)
+
+
 engine = create_engine(os.getenv('DATABASE_URL'))
 chi_weather_daily_df_pd.to_sql(
     name='chi_weather_daily', 
@@ -115,6 +110,4 @@ chi_weather_daily_df_pd.to_sql(
 
 print("Successfully wrote to the chi_weather_daily table.")
 
-cur.close()
-conn.close()
 
