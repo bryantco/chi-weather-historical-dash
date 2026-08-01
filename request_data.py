@@ -5,7 +5,6 @@ from datetime import datetime, timedelta, date
 import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-import psycopg2
 
 start_date = '2000-01-01'
 end_date = (date.today() - timedelta(days=1)).strftime('%Y-%m-%d')
