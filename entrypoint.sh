@@ -10,6 +10,6 @@ superset fab create-admin \
               --firstname Superset \
               --lastname Admin \
               --email admin@superset.com \
-              --password admin
+              --password "${SUPERSET_ADMIN_PASSWORD:?SUPERSET_ADMIN_PASSWORD must be set}"
 
 gunicorn -b 0.0.0.0:${PORT:-8088} --workers 2 --timeout 120 "superset.app:create_app()"
