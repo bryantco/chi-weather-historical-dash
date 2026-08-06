@@ -22,7 +22,8 @@ daily_vars = [
     "snowfall_sum", 
     "weather_code",
     "wind_speed_10m_mean", 
-    "cloud_cover_mean"
+    "cloud_cover_mean",
+    "relative_humidity_2m_mean"
 ]
 params = {
     # Lat and lon for O'Hare
@@ -51,6 +52,7 @@ daily_snowfall_sum = daily.Variables(4).ValuesAsNumpy()
 daily_weather_code = daily.Variables(5).ValuesAsNumpy()
 daily_wind_speed_10m_mean = daily.Variables(6).ValuesAsNumpy()
 daily_cloud_cover_mean = daily.Variables(7).ValuesAsNumpy()
+daily_relative_humidity_2m_mean = daily.Variables(8).ValuesAsNumpy()
 
 daily_data = {
 	"date": pl.date_range(
@@ -70,6 +72,7 @@ daily_data["snowfall_sum"] = daily_snowfall_sum
 daily_data["weather_code"] = daily_weather_code
 daily_data["wind_speed_10m_mean"] = daily_wind_speed_10m_mean
 daily_data["cloud_cover_mean"] = daily_cloud_cover_mean
+daily_data["relative_humidity_2m_mean"] = daily_relative_humidity_2m_mean
 
 # Convert to polars df; one row per day, one column per weather metric
 chi_weather_daily_df = pl.DataFrame(daily_data)
