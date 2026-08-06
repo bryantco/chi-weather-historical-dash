@@ -10,7 +10,7 @@ hasn't always been accurate, I decided to create a small dashboard to rely on da
 for a screenshot: 
 
 <p align="center" width="100%">
- <img src="assets/dashboard.png" width="90%"/>
+ <img src="assets/dashboard_2026.png" width="90%"/>
 </p>
 
 Weather readings are for O'Hare International Airport. Data is available starting January 1, 2000 and 
