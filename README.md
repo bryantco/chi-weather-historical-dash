@@ -1,6 +1,6 @@
 # Chicago Weather Dashboard
 
-Link to dashboard: <https://chi-weather-historical-dash.onrender.com/superset/dashboard/p/wJBVlwklyo2/> 
+Link to dashboard: <https://chi-weather-historical-dash.onrender.com/superset/dashboard/p/1wO72jV2Dgr/> 
 (it may take a few minutes to load because Render fully spins down the website when inactive)
 
 This small data engineering project plots three key weather metrics in Chicago that are of interest for historical comparison:
@@ -10,7 +10,7 @@ hasn't always been accurate, I decided to create a small dashboard to rely on da
 for a screenshot: 
 
 <p align="center" width="100%">
- <img src="assets/dashboard.png" width="90%"/>
+ <img src="assets/dashboard_2026.png" width="90%"/>
 </p>
 
 Weather readings are for O'Hare International Airport. Data is available starting January 1, 2000 and 
